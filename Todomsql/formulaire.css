@@ -1,0 +1,197 @@
+body {
+    background-image: url(macarons.jpg);
+}
+
+
+main {
+    background: #4d244e;
+    font-family: sans-serif;
+    border-top: 5px solid #aa8e8d;
+    margin: auto;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 500px;
+    border: double;
+    border: 1px solid;
+    box-shadow: 5px 20px #888888;
+    width: 250px;
+}
+
+h1 {
+    color: #aa8e8d;
+    text-shadow: 3px 3px 5px white;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    
+
+}
+
+legend {
+    color: white; 
+    text-shadow: 2px 2px 4px black;
+    padding-bottom: 15px;
+    border: 1px outset black;
+    text-align: center;
+    font-size: 20px;
+    width: 250px;
+    background: #ae5f75;
+    border-radius: 28px;
+    height: 20px;
+}
+/*bouton*/
+.button {
+    background: #4d244e;
+    background-image: -webkit-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -moz-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -ms-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -o-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: linear-gradient(to bottom, #4d244e, #ae5f75);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.button:hover {
+    background: #168b12;
+    background-image: -webkit-linear-gradient(top, #168b12, #032b02);
+    background-image: -moz-linear-gradient(top, #168b12, #032b02);
+    background-image: -ms-linear-gradient(top, #168b12, #032b02);
+    background-image: -o-linear-gradient(top, #168b12, #032b02);
+    background-image: linear-gradient(to bottom, #168b12, #032b02);
+    text-decoration: none;
+  }
+
+/*bouton ajouter*/
+.add {
+    background: #4d244e;
+    background-image: -webkit-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -moz-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -ms-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -o-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: linear-gradient(to bottom, #4d244e, #ae5f75);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.add:hover {
+    background: #ae5f75;
+    background-image: -webkit-linear-gradient(top, #ae5f75, #4d244e);
+    background-image: -moz-linear-gradient(top, #ae5f75, #4d244e);
+    background-image: -ms-linear-gradient(top, #ae5f75, #4d244e);
+    background-image: -o-linear-gradient(top, #ae5f75, #4d244e);
+    background-image: linear-gradient(to bottom, #ae5f75, #4d244e);
+    text-decoration: none;
+  }
+
+/*bouton supprimer*/
+.supp {
+    background: #4d244e;
+    background-image: -webkit-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -moz-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -ms-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: -o-linear-gradient(top, #4d244e, #ae5f75);
+    background-image: linear-gradient(to bottom, #4d244e, #ae5f75);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.supp:hover {
+    background: #fc0303;
+    background-image: -webkit-linear-gradient(top, #ae5f75, #fc0303);
+    background-image: -moz-linear-gradient(top, #ae5f75, #fc0303);
+    background-image: -ms-linear-gradient(top, #ae5f75, #fc0303);
+    background-image: -o-linear-gradient(top, #ae5f75, #fc0303);
+    background-image: linear-gradient(to bottom, #ae5f75, #fc0303);
+    text-decoration: none;
+  }
+
+
+.task {
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+}
+
+.list {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+}
+
+.line {
+    color: white;
+    text-decoration: line-through red;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #4d244e; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #4d244e }
+  }

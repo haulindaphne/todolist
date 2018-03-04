@@ -6,14 +6,14 @@ function attribution($origine) {
     }
 }
 
-//variables pour accès à la bd
+
 $host = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "todolist";
-// connection à la base de données 
+$username = "id4930990_mysql";
+$password = "1kiki4PDG";
+$dbname = "id4930990_todolist";
+
 try {
-    $bd = new PDO("mysql:host=localhost;dbname=todolist;charset=utf8", $username, $password);
+    $bd = new PDO("mysql:host=localhost;dbname=$dbname;charset=utf8", $username, $password);
    //echo "Connected successfully";
     }
 catch (Exception $e)
@@ -21,32 +21,32 @@ catch (Exception $e)
     // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : ' . $e->getMessage());
     }
-// rappelle la function 
+
     $item = attribution('taches');
- // sanitization des données   
+    
     $itemSanit = filter_var($item, FILTER_SANITIZE_STRING);
     echo $item;
-    $last = $bd->query('SELECT * from task where id = (select max(id) from task)');//selection des données de la table(!!!) en utilisant l'id
+    $last = $bd->query('SELECT * from task where id = (select max(id) from task)');
     $lastItems = $last->fetch();
 
-// condition pour vérifier données sanit et voir si != taches
+
     if (!empty($itemSanit) && $itemSanit != $lastItems['taches']) {
         echo $itemSanit;
-        $bd->query('INSERT INTO task(taches, archives) values("'.$itemSanit.'", "false")');//insertion de la nouvelle tâche dans la bd
+        $bd->query('INSERT INTO task(taches, archives) values("'.$itemSanit.'", "false")');
     }
-    $archives = $bd->query('SELECT taches from task where archives = "false"');//selection de la tache pour l'envoyer dans la partie archives (=valeur: false)
-    if (isset($_POST['button']) && isset($_POST['list'])){ //quand on appuie sur le bouton ok 
+    $archives = $bd->query('SELECT taches from task where archives = "false"');
+    if (isset($_POST['button']) && isset($_POST['list'])){
         for ($i = 0 ; $i < count($_POST['list']); $i++){
-            $bd->exec('UPDATE task SET archives = "true" WHERE taches = "'.$_POST['list'][$i].'"');//permet d'envoyer dans archives puisque la valeur est devenue true
+            $bd->exec('UPDATE task SET archives = "true" WHERE taches = "'.$_POST['list'][$i].'"');
         }
     }
-    if(isset($_POST['supp']) &&  isset($_POST['delete'])) {//quand on appuie sur le bouton supprimer
+    if(isset($_POST['supp']) &&  isset($_POST['delete'])) {
         for ($a = 0; $a < count($_POST['delete']); $a++) {
-            $bd->exec('DELETE from task WHERE taches = "'.$_POST['delete'][$a].'"');//suppression de la tâche de la bd avec la fonction DELETE
+            $bd->exec('DELETE from task WHERE taches = "'.$_POST['delete'][$a].'"');
         }
     }
-    $ok = $bd->query('SELECT taches from task WHERE archives = "false"');//selection des taches quand appuie sur bouton ok pour les envoyer vers archives
-    $supprimer = $bd->query('SELECT taches from task WHERE archives = "true"');//selection des taches quand appuie sur supprimer pour les delete
+    $ok = $bd->query('SELECT taches from task WHERE archives = "false"');
+    $supprimer = $bd->query('SELECT taches from task WHERE archives = "true"');
 
 ?>
 <!DOCTYPE html>

@@ -13,7 +13,7 @@ $password = "root";
 $dbname = "todolist";
 // connection à la base de données 
 try {
-    $bd = new PDO("mysql:host=localhost;dbname=todolist;charset=utf8", $username, $password);
+    $bd = new PDO("mysql:host=$host;dbname=todolist;charset=utf8", $username, $password);
    //echo "Connected successfully";
     }
 catch (Exception $e)
@@ -25,6 +25,7 @@ catch (Exception $e)
     $item = attribution('taches');
  // sanitization des données   
     $itemSanit = filter_var($item, FILTER_SANITIZE_STRING);
+    $itemSanit = trim($itemSanit);
     echo $item;
     $last = $bd->query('SELECT * from task where id = (select max(id) from task)');//selection des données de la table(!!!) en utilisant l'id
     $lastItems = $last->fetch();
